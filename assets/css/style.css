@@ -20,27 +20,29 @@ body {
 }
 
 
-/* HEADER Y MENU */
-header {
-	position: sticky;
+/* MENU */
+#menu {
+    position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 0.5px solid #34385e;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
     padding: 2rem;
     background-color: white;
+     opacity: 0;
+    animation: fadeIn 2s forwards ease-in;
 }
 
-h1 {
-    font-size: 2em;
-	font-weight: bolder;
+@keyframes fadeIn {
+to {
+    opacity: 1;
+}
 }
 
 #menu > ul {
     list-style: none;
     display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 #menu > ul > li {
@@ -59,22 +61,43 @@ h1 {
 }
 
 
-/* MAIN */
-main {
-	min-height: 200vh;
+/* HEADER */
+header {
     padding: 2rem;
-}
-
-#title {
+    height: 90vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 90vh;
+    align-items: center; 
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 2s forwards ease-in;
 }
 
-#title > h1 {
+@keyframes fadeIn {
+to {
+    opacity: 1;
+}
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5em;
+	font-weight: bolder;
     text-align: center;
     font-weight: normal;
+    margin-bottom: 0.3em;
+}
+
+
+
+header h2 {
+    text-align: center;
+}
+
+
+/* MAIN */
+main {
+    padding: 2rem;
 }
 
 .texto a {
@@ -82,6 +105,10 @@ main {
     font-weight: 600;
     color: #34385e;
     text-decoration: none;
+}
+
+.texto a:hover{
+    color: gray;
 }
 
 h2 {
@@ -149,8 +176,6 @@ footer {
 	font-size: 0.9rem;
 	color: #6c757d;
 }
-
-
 
 
 /* MEDIA QUERIES  */
